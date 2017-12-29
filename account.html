@@ -1,0 +1,35 @@
+<div ng-controller="accountController" class="container">
+  <div class="col-sm-4 col-sm-offset-9">
+    <a ui-sref="doctors" class="nav">Doctors</a>
+    <a ng-click="logout()" class="nav">Logout</a>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-5">
+      <h1 class="head">Account Information</h1>
+    </div>
+  </div>
+  <div class="col-sm-4 col-sm-offset-6">
+    <div class="row">
+      <p class="userInfo" ng-model="user.firstName">
+        <strong class="pad">First Name</strong>
+        </br>
+        {{ loadedUser.firstName | uppercase }}</p>
+    </div>
+    <div class="row">
+      <p class="userInfo" ng-model="user.lastName">
+        <strong class="pad">Last Name</strong>
+        </br>
+        {{ loadedUser.lastName | uppercase }}</p>
+    </div>
+    <div class="row">
+      <p class="userInfo" ng-model="user.email">
+        <strong class="pad">Email Address</strong>
+        </br>
+        {{ loadedUser.email | uppercase }}</p>
+    </div>
+    <div class="row">
+      <button class="success btn btn-sm" ui-sref="userUpdate({id: loadedUser.id})">Update</button>
+      <button class="danger btn btn-sm" ng-click="deleteUser(loadedUser)">Delete</button>
+    </div>
+  </div>
+</div>
